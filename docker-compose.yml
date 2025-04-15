@@ -1,0 +1,16 @@
+services:
+  host-app:
+    build: ./host-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - arcane-mf
+      - tlou-mf
+  arcane-mf:
+    build: ./arcane-mf
+    ports:
+      - "3001:3001"
+  tlou-mf:
+    build: ./tlou-mf
+    ports:
+      - "3002:3002"
