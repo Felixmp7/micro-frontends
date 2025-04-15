@@ -1,0 +1,10 @@
+{
+  "name": "microfrontends-characters-app",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "host-app",
+    "arcane-mf",
+    "tlou-mf"
+  ]
+}

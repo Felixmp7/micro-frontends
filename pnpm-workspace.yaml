@@ -1,0 +1,4 @@
+packages:
+  - 'host-app'
+  - 'arcane-mf'
+  - 'tlou-mf'
