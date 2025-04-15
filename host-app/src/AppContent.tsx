@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import ArcaneCharactersAdapter from './adapters/ArcaneCharactersAdapter';
-import TlouCharactersAdapter from './adapters/TlouCharactersAdapter';
+import { ArcaneCharactersAdapter } from './adapters/ArcaneCharactersAdapter';
+import { TlouCharactersAdapter } from './adapters/TlouCharactersAdapter';
 import { Container, Header, Selector } from './App.styles';
 import { ArcaneCharacter } from './entities/ArcaneCharacter';
 import { TlouCharacter } from './entities/TlouCharacter';
