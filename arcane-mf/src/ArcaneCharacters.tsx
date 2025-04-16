@@ -1,3 +1,4 @@
+import type { SeriesCharacter } from 'shared-entities';
 import styled from 'styled-components';
 
 // BEM: arcane-characters__container, arcane-characters__item, etc.
@@ -25,13 +26,8 @@ const Item = styled.div`
   }
 `;
 
-interface ArcaneCharacter {
-  name: string;
-  image: string;
-}
-
 interface ArcaneCharactersProps {
-  characters: ArcaneCharacter[];
+  characters: SeriesCharacter[];
 }
 
 export const ArcaneCharacters = ({ characters }: ArcaneCharactersProps) => (

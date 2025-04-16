@@ -1,8 +1,8 @@
-import ArcaneCharacters from 'arcaneMf/ArcaneCharacters';
-import { ArcaneCharacter } from '../entities/ArcaneCharacter';
+import { ArcaneCharacters } from 'arcaneMf/ArcaneCharacters';
+import type { SeriesCharacter } from 'shared-entities';
 
 interface Props {
-  characters: ArcaneCharacter[];
+  characters: SeriesCharacter[];
 }
 
 export const ArcaneCharactersAdapter = ({ characters }: Props) => <ArcaneCharacters characters={characters} />;

@@ -1,4 +1,4 @@
-export interface TlouCharacter {
+export interface SeriesCharacter {
   name: string;
   image: string;
 }

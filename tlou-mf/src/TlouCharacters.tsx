@@ -1,3 +1,4 @@
+import type { SeriesCharacter } from 'shared-entities';
 import styled from 'styled-components';
 
 // BEM: tlou-characters__container, tlou-characters__item, etc.
@@ -25,13 +26,8 @@ const Item = styled.div`
   }
 `;
 
-interface TlouCharacter {
-  name: string;
-  image: string;
-}
-
 interface TlouCharactersProps {
-  characters: TlouCharacter[];
+  characters: SeriesCharacter[];
 }
 
 export const TlouCharacters = ({ characters }: TlouCharactersProps) => (
