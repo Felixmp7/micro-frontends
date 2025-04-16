@@ -3,9 +3,16 @@ import styled from 'styled-components';
 export const Container = styled.div`
   &.host-app__container {
     min-height: 100vh;
-    background: #181c22;
     color: #fff;
     font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  & .host-app__main {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
   }
 `;
 
@@ -14,9 +21,10 @@ export const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 4rem;
     padding: 2rem 3rem;
-    background: #222831;
     border-bottom: 1px solid #333;
+
     h1 {
       margin: 0;
       font-size: 2rem;
