@@ -6,7 +6,8 @@
   "scripts": {
     "test": "vitest --ui",
     "dev": "vite",
-    "build": "vite build --watch & vite preview --port 3002",
+    "build": "vite build",
+    "watch": "vite build --watch & vite preview --port 3002",
     "lint": "eslint .",
     "preview": "vite preview"
   },
