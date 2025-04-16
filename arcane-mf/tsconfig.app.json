@@ -25,6 +25,9 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": "./src",
     "paths": {
+      "@/*": [
+        "./src/*"
+      ],
       "shared-entities": [
         "../../shared-entities/index.ts"
       ]
