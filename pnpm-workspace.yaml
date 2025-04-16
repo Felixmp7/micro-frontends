@@ -2,3 +2,4 @@ packages:
   - 'host-app'
   - 'arcane-mf'
   - 'tlou-mf'
+  - 'shared-entities'
