@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
+import type { SeriesCharacter } from 'shared-entities';
 import { ArcaneCharactersAdapter } from './adapters/ArcaneCharactersAdapter';
 import { TlouCharactersAdapter } from './adapters/TlouCharactersAdapter';
 import { Container, Header, Selector } from './App.styles';
-import { ArcaneCharacter } from './entities/ArcaneCharacter';
-import { TlouCharacter } from './entities/TlouCharacter';
 import { useLanguage } from './hooks/useLanguage';
 import { texts } from './i18n/texts';
 import { getArcaneCharacters } from './usecases/getArcaneCharacters';
@@ -12,8 +11,8 @@ import { getTlouCharacters } from './usecases/getTlouCharacters';
 export const AppContent = () => {
   const { language, setLanguage } = useLanguage();
   const [series, setSeries] = useState<'arcane' | 'tlou' | null>(null);
-  const [arcaneCharacters, setArcaneCharacters] = useState<ArcaneCharacter[]>([]);
-  const [tlouCharacters, setTlouCharacters] = useState<TlouCharacter[]>([]);
+  const [arcaneCharacters, setArcaneCharacters] = useState<SeriesCharacter[]>([]);
+  const [tlouCharacters, setTlouCharacters] = useState<SeriesCharacter[]>([]);
   const t = texts[language];
 
   useEffect(() => {
