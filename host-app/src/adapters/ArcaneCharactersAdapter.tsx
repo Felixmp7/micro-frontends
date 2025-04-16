@@ -1,4 +1,4 @@
-import ArcaneCharacters from 'arcaneMf/ArcaneCharacters';
+import { ArcaneCharacters } from 'arcaneMf/ArcaneCharacters';
 import { ArcaneCharacter } from '../entities/ArcaneCharacter';
 
 interface Props {
