@@ -1,8 +1,8 @@
+import type { SeriesCharacter } from 'shared-entities';
 import { TlouCharacters } from 'tlouMf/TlouCharacters';
-import { TlouCharacter } from '../entities/TlouCharacter';
 
 interface Props {
-  characters: TlouCharacter[];
+  characters: SeriesCharacter[];
 }
 
 export const TlouCharactersAdapter = ({ characters }: Props) => <TlouCharacters characters={characters} />;
