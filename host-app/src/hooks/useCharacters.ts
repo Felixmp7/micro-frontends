@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import type { SeriesCharacter } from 'shared-entities';
 
-export const useCharacters = (jsonMock: SeriesCharacter[]) => {
+export const useCharacters = (fetcher: () => Promise<SeriesCharacter[]>) => {
     const [characters, setCharacters] = useState<SeriesCharacter[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleLoadCharacters = () => {
+    const handleLoadCharacters = async () => {
         setIsLoading(true);
-        // Simulate API call
-        setTimeout(() => {
-            setCharacters(jsonMock);
+        try {
+            const characters = await fetcher();
+            setCharacters(characters);
+        } catch (error) {
+            console.error('Error fetching characters:', error);
+        } finally {
             setIsLoading(false);
-        }, 2000);
+        }
     }
 
     return { characters, isLoading, handleLoadCharacters };

@@ -6,6 +6,7 @@ import { useLanguage } from 'hooks/useLanguage';
 import { texts } from 'i18n/texts';
 import ARCANE_JSON from 'mocks/ARCANE.json';
 import TLOU_JSON from 'mocks/TLOU.json';
+import { getCharacters } from 'services/characters.service';
 
 export const AppContent = () => {
   const { language, setLanguage } = useLanguage();
@@ -15,13 +16,13 @@ export const AppContent = () => {
     characters: arcaneCharacters,
     isLoading: arcaneIsLoading,
     handleLoadCharacters: handleLoadArcaneCharacters
-  } = useCharacters(ARCANE_JSON)
+  } = useCharacters(() => getCharacters(ARCANE_JSON))
 
   const {
     characters: tlouCharacters,
     isLoading: tlouIsLoading,
     handleLoadCharacters: handleLoadTlouCharacters
-  } = useCharacters(TLOU_JSON)
+  } = useCharacters(() => getCharacters(TLOU_JSON))
 
   return (
     <Container className="host-app__container">
