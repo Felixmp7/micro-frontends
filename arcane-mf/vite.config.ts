@@ -1,8 +1,7 @@
+import federation from '@originjs/vite-plugin-federation';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
-
-// https://vite.dev/config/
-import federation from '@originjs/vite-plugin-federation';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   server: {
@@ -10,19 +9,17 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    tsconfigPaths(),
     federation({
       name: 'arcane-mf',
       filename: 'remoteEntry.js',
       exposes: {
-        './ArcaneCharacters': './src/ArcaneCharacters',
+        './CharactersList': './src/components/CharactersList/index.tsx',
       },
       shared: ['react', 'react-dom', 'styled-components'],
     }),
   ],
   build: {
-    modulePreload: false,
     target: 'esnext',
-    minify: false,
-    cssCodeSplit: false,
   }
 });

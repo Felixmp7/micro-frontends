@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vite.dev/config/
 import federation from '@originjs/vite-plugin-federation';
@@ -10,6 +11,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    tsconfigPaths(),
     federation({
       name: 'host-app',
       remotes: {
@@ -20,9 +22,6 @@ export default defineConfig({
     }),
   ],
   build: {
-    modulePreload: false,
     target: 'esnext',
-    minify: false,
-    cssCodeSplit: false,
   }
 });
