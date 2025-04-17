@@ -24,16 +24,18 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "baseUrl": "./src",
+    "types": [
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
       "shared-entities": [
         "../../shared-entities/index.ts"
       ]
     }
   },
   "include": [
-    "src"
+    "src",
+    "./vite.config.ts"
   ]
 }
