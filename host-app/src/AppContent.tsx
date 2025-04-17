@@ -1,17 +1,27 @@
+import { ArcaneCharactersAdapter } from 'adapters/ArcaneCharactersAdapter';
 import { TlouCharactersAdapter } from 'adapters/TlouCharactersAdapter';
+import { Container, Header } from 'App.styles';
 import { useCharacters } from 'hooks/useCharacters';
-import { ArcaneCharactersAdapter } from './adapters/ArcaneCharactersAdapter';
-import { Container, Header } from './App.styles';
-import { useLanguage } from './hooks/useLanguage';
-import { texts } from './i18n/texts';
-import ARCANE_JSON from './mocks/ARCANE.json';
-import TLOU_JSON from './mocks/TLOU.json';
+import { useLanguage } from 'hooks/useLanguage';
+import { texts } from 'i18n/texts';
+import ARCANE_JSON from 'mocks/ARCANE.json';
+import TLOU_JSON from 'mocks/TLOU.json';
 
 export const AppContent = () => {
   const { language, setLanguage } = useLanguage();
-  const { characters: arcaneCharacters, isLoading: arcaneIsLoading, handleLoadCharacters: handleLoadArcaneCharacters } = useCharacters(ARCANE_JSON)
-  const { characters: tlouCharacters, isLoading: tlouIsLoading, handleLoadCharacters: handleLoadTlouCharacters } = useCharacters(TLOU_JSON)
   const t = texts[language];
+
+  const {
+    characters: arcaneCharacters,
+    isLoading: arcaneIsLoading,
+    handleLoadCharacters: handleLoadArcaneCharacters
+  } = useCharacters(ARCANE_JSON)
+
+  const {
+    characters: tlouCharacters,
+    isLoading: tlouIsLoading,
+    handleLoadCharacters: handleLoadTlouCharacters
+  } = useCharacters(TLOU_JSON)
 
   return (
     <Container className="host-app__container">
