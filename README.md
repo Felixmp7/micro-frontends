@@ -1,21 +1,37 @@
 # Microfrontends Characters App
 
-Aplicación modular para consultar personajes de Arcane y The Last of Us usando microfrontends, React, TypeScript, Vite y Docker.
+This monorepo implements a microfrontends architecture with React and Vite. The goal is to demonstrate frontend best practices, responsibility separation, and the use of modern technologies.
 
-## Estructura del Monorepo
+## Included Projects
 
-- `host-app`: Proyecto principal (host)
-- `arcane-mf`: Microfrontend de Arcane
-- `tlou-mf`: Microfrontend de The Last of Us
+- `host-app`: Main application that orchestrates the microfrontends.
+- `arcane-mf`: Microfrontend for Arcane characters.
+- `tlou-mf`: Microfrontend for The Last of Us characters.
+- `shared-entities`: Shared types and entities package.
 
-## Instalación
+## Technologies Used
 
-1. Instala [pnpm](https://pnpm.io/)
-2. Ejecuta `pnpm install` en la raíz
+- React (with hooks and context)
+- TypeScript
+- Vite
+- Styled-components
+- Vitest (testing)
+- Docker (optional for deployment)
 
-## Desarrollo
+## Architecture
 
-Cada app tiene su propio script de desarrollo:
+The folder structure follows the classic by-type approach (`components/`, `hooks/`, `context/`, etc.), which is ideal for small and medium-sized projects. If the project grows, it is recommended to migrate to a modular architecture by domain/feature to improve scalability and maintainability.
+
+> **Note:** For the scope of this technical test, the current structure is sufficient and keeps things simple. For larger projects, modularization by feature/domain is recommended.
+
+## Installation
+
+1. Install [pnpm](https://pnpm.io/)
+2. Run `pnpm install` in the root
+
+## Development
+
+Run each app's development server:
 
 ```
 pnpm --filter host-app dev
@@ -23,19 +39,32 @@ pnpm --filter arcane-mf dev
 pnpm --filter tlou-mf dev
 ```
 
-## Pruebas
+> **Note:** To run all apps together in order to test the microfrontends integration, you need to run:
 
-Cada app incluye Vitest:
+- In host-app:
+```
+pnpm run dev
+```
+
+- In arcane-mf:
+```
+pnpm run build:watch
+```
+
+- In tlou-mf:
+```
+pnpm run build:watch
+```
+
+## Testing
+
+Each app includes Vitest:
 
 ```
 pnpm --filter <app> test
 ```
 
-## Contenerización
+## Containerization
 
-Usa `docker-compose up` para levantar los servicios.
-
----
-
-Más detalles en los README de cada app.
-# micro-frontends
+Use `docker-compose up` to start the services.
+For more details, see the READMEs of each app.
