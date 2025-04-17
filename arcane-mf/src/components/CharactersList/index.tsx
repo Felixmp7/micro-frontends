@@ -2,19 +2,19 @@ import { SeriesCharacter } from 'shared-entities';
 import { Button, Container, Item } from './Styled';
 
 interface Props {
-  language: 'en' | 'es';
-  buttonText: string;
-  isLoading: boolean;
   characters: SeriesCharacter[];
-  onClick: VoidFunction;
+  language?: 'en' | 'es';
+  buttonText?: string;
+  isLoading?: boolean;
+  onClick?: VoidFunction;
 }
 
 export const CharactersList = ({
-  language,
+  language = 'en',
   buttonText = 'Load Arcane Characters',
+  isLoading = false,
+  characters,
   onClick,
-  characters = [],
-  isLoading
 }: Props) => {
 
   if (characters.length && !isLoading) {
@@ -23,7 +23,7 @@ export const CharactersList = ({
         {characters.map(({ name, description, image }) => (
           <Item className="arcane-characters__item" key={name}>
             <img src={image} alt={name} />
-            <span>{name}</span>
+            <span aria-label='name'>{name}</span>
             <p>{description[language]}</p>
           </Item>
         ))}
