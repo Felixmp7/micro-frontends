@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "test": "vitest --ui",
+    "test": "vitest",
     "dev": "vite",
     "build": "vite build",
-    "watch": "vite build --watch & vite preview --port 3001",
+    "build:watch": "vite build --watch & vite preview --port 3001",
     "lint": "eslint .",
     "preview": "vite preview"
   },

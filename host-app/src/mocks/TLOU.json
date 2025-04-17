@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Joel Miller",
+        "description": {
+            "en": "Joel is a ruthless operator in the underground black market. Independent and ingenious, he hardened after a tragic loss. Along his journey, he discovers the strength to become a father figure for Ellie and fight for a better future for her and him. 5 years later, Joel settled in Jackson, Wyoming, together with his brother Tommy, his wife María, and Ellie. Although he doesn't regret the decisions he made five years ago, he will soon have to face the consequences of his actions.",
+            "es": "Joel es un operador despiadado en el mercado negro subterráneo. Independiente e ingenioso, se endureció tras una trágica pérdida. A lo largo de su viaje, descubre la fuerza para convertirse en una figura paterna para Ellie y luchar por un mejor futuro para ella y para él. 5 años después, Joel se estableció en Jackson, Wyoming junto a su hermano Tommy, su esposa María y, por supuesto, Ellie. Si bien no se arrepiente de las decisiones que tomó hace cinco años, pronto tendrá que enfrentarse a las consecuencias de sus actos."
+        },
+        "image": "https://static.wikia.nocookie.net/thelastofus/images/d/d1/Part_I_Joel_infobox.png"
+    },
+    {
+        "name": "Ellie",
+        "description": {
+            "en": "Ellie is a 14-year-old girl who has never known the world \"normal\" before 2013. Therefore, Joel doesn't just become her driver, but also a guide for the world. She is sharp, ingenious, and capable. Whether with her wordplay or overcoming crises, her wit and ingenuity prove invaluable. 5 years later, when a traumatic event shakes her and her community, she embarks on a journey for vengeance. Although she matures, she must face her enemies, humans, and infected, as well as the emotional load of her actions.",
+            "es": "Cuando conocemos a Ellie por primera vez, es una chica de 14 años que no conoció el mundo \"normal\" anterior a 2013. Por lo tanto, Joel no se convierte solo en su transportador, sino también en un guía para el mundo. Es precoz, ingeniosa y capaz. Ya sea con sus juegos de palabras o superando crisis, su astucia e ingenio demuestran ser invaluables. 5 años después, cuando un evento traumático la sacude a ella y a su comunidad, emprende un viaje en busca de venganza. Si bien maduró, debe vérselas no solo contra sus adversarios, humanos e infectados, sino también contra la carga emocional de sus acciones."
+        },
+        "image": "https://static.wikia.nocookie.net/thelastofus/images/5/50/Ellie_Jackson_shoulder_infobox.jpg"
+    },
+    {
+        "name": "Tommy Miller",
+        "description": {
+            "en": "Tommy is a 14-year-old boy who has never known the world \"normal\" before 2013. Therefore, Joel doesn't just become his driver, but also a guide for the world. He is sharp, ingenious, and capable. Whether with his wordplay or overcoming crises, his wit and ingenuity prove invaluable. 5 years later, when a traumatic event shakes his and his community, he embarks on a journey for vengeance. Although he matures, he must face his enemies, humans, and infected, as well as the emotional load of his actions.",
+            "es": "Aunque comparte la aspereza y la determinación de su hermano Joel, Tommy se distingue por una personalidad impulsiva, compasiva y optimista. Después de un tiempo luchando junto a las Luciérnagas, conoce a su futura esposa, María, y su comunidad en Jackson, Wyoming. Con este nuevo sentido para sus valores, busca crear una vida rica y significativa a pesar de unas circunstancias desalentadoras. Cinco años después, Ellie y Joel se unen a la comunidad de María y Tommy. Este continúa con su misión personal patrullando y liderando a la comunidad junto a María, además de acoger a Ellie en el seno de su familia."
+        },
+        "image": "https://static.wikia.nocookie.net/thelastofus/images/5/53/Tommy_jackson_shoulder_infobox.jpg"
+    }
+]

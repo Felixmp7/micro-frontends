@@ -1,34 +1,32 @@
-import { useEffect, useState } from 'react';
-import type { SeriesCharacter } from 'shared-entities';
-import { ArcaneCharactersAdapter } from './adapters/ArcaneCharactersAdapter';
-import { TlouCharactersAdapter } from './adapters/TlouCharactersAdapter';
-import { Container, Header, Selector } from './App.styles';
-import { useLanguage } from './hooks/useLanguage';
-import { texts } from './i18n/texts';
-import { getArcaneCharacters } from './usecases/getArcaneCharacters';
-import { getTlouCharacters } from './usecases/getTlouCharacters';
+import { ArcaneCharactersAdapter } from 'adapters/ArcaneCharactersAdapter';
+import { TlouCharactersAdapter } from 'adapters/TlouCharactersAdapter';
+import { Container, Header } from 'App.styles';
+import { useCharacters } from 'hooks/useCharacters';
+import { useLanguage } from 'hooks/useLanguage';
+import { texts } from 'i18n/texts';
+import ARCANE_JSON from 'mocks/ARCANE.json';
+import TLOU_JSON from 'mocks/TLOU.json';
 
 export const AppContent = () => {
   const { language, setLanguage } = useLanguage();
-  const [series, setSeries] = useState<'arcane' | 'tlou' | null>(null);
-  const [arcaneCharacters, setArcaneCharacters] = useState<SeriesCharacter[]>([]);
-  const [tlouCharacters, setTlouCharacters] = useState<SeriesCharacter[]>([]);
   const t = texts[language];
 
-  useEffect(() => {
-    // Fetch data solo si es necesario
-    if (series === 'arcane' && arcaneCharacters.length === 0) {
-      getArcaneCharacters().then(setArcaneCharacters);
-    }
-    if (series === 'tlou' && tlouCharacters.length === 0) {
-      getTlouCharacters().then(setTlouCharacters);
-    }
-  }, [arcaneCharacters.length, series, tlouCharacters.length]);
+  const {
+    characters: arcaneCharacters,
+    isLoading: arcaneIsLoading,
+    handleLoadCharacters: handleLoadArcaneCharacters
+  } = useCharacters(ARCANE_JSON)
+
+  const {
+    characters: tlouCharacters,
+    isLoading: tlouIsLoading,
+    handleLoadCharacters: handleLoadTlouCharacters
+  } = useCharacters(TLOU_JSON)
 
   return (
     <Container className="host-app__container">
       <Header className="host-app__header">
-        <h1>Microfrontends Characters App</h1>
+        <h1>{t.title}</h1>
         <div>
           <label>{t.language}: </label>
           <select value={language} onChange={e => setLanguage(e.target.value as 'en' | 'es')}>
@@ -37,26 +35,19 @@ export const AppContent = () => {
           </select>
         </div>
       </Header>
-      <main>
-        {!series && (
-          <Selector className="host-app__selector">
-            <h2>{t.selectSeries}</h2>
-            <button onClick={() => setSeries('arcane')}>{t.arcane}</button>
-            <button onClick={() => setSeries('tlou')}>{t.tlou}</button>
-          </Selector>
-        )}
-        {series === 'arcane' && (
-          <section>
-            <button onClick={() => setSeries(null)}>&larr; {t.selectSeries}</button>
-            <ArcaneCharactersAdapter characters={arcaneCharacters} />
-          </section>
-        )}
-        {series === 'tlou' && (
-          <section>
-            <button onClick={() => setSeries(null)}>&larr; {t.selectSeries}</button>
-            <TlouCharactersAdapter characters={tlouCharacters} />
-          </section>
-        )}
+      <main className="host-app__main">
+        <ArcaneCharactersAdapter
+          language={language}
+          characters={arcaneCharacters}
+          isLoading={arcaneIsLoading}
+          handleLoadCharacters={handleLoadArcaneCharacters}
+        />
+        <TlouCharactersAdapter
+          language={language}
+          characters={tlouCharacters}
+          isLoading={tlouIsLoading}
+          handleLoadCharacters={handleLoadTlouCharacters}
+        />
       </main>
     </Container>
   );
