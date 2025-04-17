@@ -15,6 +15,6 @@ services:
       - "3000:3000"   # host-app (Vite en 3000)
       - "3001:3001"   # arcane-mf
       - "3002:3002"   # tlou-mf
-    command: sh -c "pnpm --filter host-app run dev & pnpm --filter arcane-mf run watch & pnpm --filter tlou-mf run watch && tail -f /dev/null"
+    command: sh -c "pnpm --filter arcane-mf run build:watch & pnpm --filter tlou-mf run build:watch & pnpm --filter host-app run dev &&tail -f /dev/null"
     environment:
       - NODE_ENV=development
