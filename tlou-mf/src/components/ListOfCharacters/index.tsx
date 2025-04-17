@@ -2,19 +2,19 @@ import { SeriesCharacter } from 'shared-entities';
 import { Button, Container, Item } from './Styled';
 
 interface Props {
-  language: 'en' | 'es';
-  buttonText: string;
-  isLoading: boolean;
+  language?: 'en' | 'es';
+  buttonText?: string;
+  isLoading?: boolean;
+  onClick?: VoidFunction;
   characters: SeriesCharacter[];
-  onClick: VoidFunction;
 }
 
 export const ListOfCharacters = ({
-  language,
+  characters,
+  language = 'en',
   buttonText = 'Load TLOU Characters',
+  isLoading = false,
   onClick,
-  characters = [],
-  isLoading
 }: Props) => {
 
   if (characters.length && !isLoading) {
