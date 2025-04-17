@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Violet",
+        "description": {
+            "en": "Violet, better known as Vi, was a young criminal from the streets of Zaun. She was a girl who was exalted, impulsive, and fearful with a very disrespectful attitude towards authority figures. As she grew up, almost alone with her sister, her friends Milo, Claggor, and Vander as her father figure, Vi developed survival instincts, leadership, and responsibility, as well as a sense of humor abrasively perverse. Years later, she would be imprisoned in Stillwater, leaving by Caitlyn's consent to search for information about Silco, motivated by wanting to see her sister again.",
+            "es": "Violet, mejor conocida como Vi, de niña fue una criminal de las calles mezquinas de Zaun, era una chica exaltada, impulsiva y temible con un respeto muy vago por las figuras de autoridad. Al crecer casi sola con su hermana, sus amigos Milo, Claggor y Vander como figura paterna, Vi desarrolló instintos de supervivencia, liderazgo y responsabilidad, así como un sentido del humor perversamente abrasivo. Años después sería encerrada en la prisión Stillwater, saliendo por consentimiento de Caitlyn a buscar información de Silco, motivada por volver a ver a su hermana."
+        },
+        "image": "https://static-wikia-nocookie-net.translate.goog/arcane/images/c/ca/ViFinaleSitting.jpg/revision/latest?cb=20250315071641&_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc"
+    },
+    {
+        "name": "Jinx",
+        "description": {
+            "en": "Jinx, better known as Powder, is a young criminal from the streets of Zaun. She is a girl who is exalted, impulsive, and fearful with a very disrespectful attitude towards authority figures. As she grows up, almost alone with her sister, her friends Milo, Claggor, and Vander as her father figure, Jinx develops survival instincts, leadership, and responsibility, as well as a sense of humor abrasively perverse. Years later, she would be imprisoned in Stillwater, leaving by Caitlyn's consent to search for information about Silco, motivated by wanting to see her sister again.",
+            "es": "Jinx, mejor conocida como Powder, de niña fue una criminal de las calles mezquinas de Zaun, era una chica exaltada, impulsiva y temible con un respeto muy vago por las figuras de autoridad. Al crecer casi sola con su hermana, sus amigos Milo, Claggor y Vander como figura paterna, Jinx desarrolló instintos de supervivencia, liderazgo y responsabilidad, así como un sentido del humor perversamente abrasivo. Años después sería encerrada en la prisión Stillwater, saliendo por consentimiento de Caitlyn a buscar información de Silco, motivada por volver a ver a su hermana."
+        },
+        "image": "https://static-wikia-nocookie-net.translate.goog/arcane/images/e/ec/JinxFinaleFullOutfit.png/revision/latest?cb=20250315082915&_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc"
+    },
+    {
+        "name": "Silco",
+        "description": {
+            "en": "Silco was the main antagonist of the first season and a posthumous character in the second season of Arcane. He was the second adoptive father of Jinx. He was also the powerful and ambitious Zaunite leader of the Quimibarons, who silently controlled Zaun without the authority of Piltover allowing it.",
+            "es": "Silco fue el antagonista principal de la primera temporada y un personaje póstumo en la segunda temporada de Arcane. Fue el segundo padre adoptivo de Jinx. También fue el poderoso y ambicioso líder zaunita de los quimiobarones, que controlaba Zaun silenciosamente, sin que la autoridad de Piltóver se lo permitiera."
+        },
+        "image": "https://static.wikia.nocookie.net/arcane/images/4/46/Silco2_Arcane_Render.png"
+    }
+]
