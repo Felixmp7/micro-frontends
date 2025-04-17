@@ -1,5 +1,6 @@
 import { SeriesCharacter } from 'shared-entities';
-import { Button, Container, Item } from './Styled';
+
+import { Button, Container, Item } from './ListOfCharacters.styled';
 
 interface Props {
   language?: 'en' | 'es';
@@ -19,9 +20,9 @@ export const ListOfCharacters = ({
 
   if (characters.length && !isLoading) {
     return (
-      <Container className="tlou-characters__container">
+      <Container>
         {characters.map(({ name, description, image }) => (
-          <Item className="tlou-characters__item" key={name}>
+          <Item key={name}>
             <div>
               <span>{name}</span>
               <p>{description[language]}</p>
@@ -35,7 +36,7 @@ export const ListOfCharacters = ({
 
   return (
     <>
-      <Button onClick={onClick} className='tlou-characters__button'>{buttonText}</Button>
+      <Button onClick={onClick}>{buttonText}</Button>
       {isLoading && <p>Loading...</p>}
     </>
   )

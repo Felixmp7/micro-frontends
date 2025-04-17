@@ -1,6 +1,6 @@
 import { ArcaneCharactersAdapter } from 'adapters/ArcaneCharactersAdapter';
 import { TlouCharactersAdapter } from 'adapters/TlouCharactersAdapter';
-import { Container, Header } from 'App.styles';
+import { Container, Header, Main } from 'App.styles';
 import { useCharacters } from 'hooks/useCharacters';
 import { useLanguage } from 'hooks/useLanguage';
 import { texts } from 'i18n/texts';
@@ -25,18 +25,18 @@ export const AppContent = () => {
   } = useCharacters(() => getCharacters(TLOU_JSON))
 
   return (
-    <Container className="host-app__container">
-      <Header className="host-app__header">
+    <Container>
+      <Header>
         <h1>{t.title}</h1>
         <div>
           <label>{t.language}: </label>
-          <select value={language} onChange={e => setLanguage(e.target.value as 'en' | 'es')}>
+          <select value={language} onChange={({ target }) => setLanguage(target.value as 'en' | 'es')}>
             <option value="en">EN</option>
             <option value="es">ES</option>
           </select>
         </div>
       </Header>
-      <main className="host-app__main">
+      <Main>
         <ArcaneCharactersAdapter
           language={language}
           characters={arcaneCharacters}
@@ -49,7 +49,7 @@ export const AppContent = () => {
           isLoading={tlouIsLoading}
           handleLoadCharacters={handleLoadTlouCharacters}
         />
-      </main>
+      </Main>
     </Container>
   );
 };
