@@ -16,7 +16,6 @@ This monorepo implements a microfrontends architecture with React and Vite. The 
 - Vite
 - Styled-components
 - Vitest (testing)
-- Docker (optional for deployment)
 
 ## Architecture
 
@@ -63,8 +62,3 @@ Each app includes Vitest:
 ```
 pnpm --filter <app> test
 ```
-
-## Containerization
-
-Use `docker-compose up` to start the services.
-For more details, see the READMEs of each app.
