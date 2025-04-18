@@ -24,10 +24,10 @@ export const ListOfCharacters = ({
         {characters.map(({ name, description, image }) => (
           <Item key={name}>
             <div>
-              <span>{name}</span>
-              <p>{description[language]}</p>
+              <span aria-label='name'>{name}</span>
+              <p aria-label='description'>{description[language]}</p>
             </div>
-            <img src={image} alt={name} />
+            <img src={image} alt={`${name}, TLOU Character`} />
           </Item>
         ))}
       </Container>
@@ -37,7 +37,7 @@ export const ListOfCharacters = ({
   return (
     <>
       <Button onClick={onClick}>{buttonText}</Button>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <p aria-live="polite">Loading...</p>}
     </>
   )
 }

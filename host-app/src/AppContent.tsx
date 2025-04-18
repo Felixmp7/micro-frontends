@@ -1,6 +1,6 @@
 import { ArcaneCharactersAdapter } from 'adapters/ArcaneCharactersAdapter';
 import { TlouCharactersAdapter } from 'adapters/TlouCharactersAdapter';
-import { Container, Header, Main } from 'App.styles';
+import { Container, Header, Section } from 'App.styles';
 import { useCharacters } from 'hooks/useCharacters';
 import { useLanguage } from 'hooks/useLanguage';
 import { texts } from 'i18n/texts';
@@ -36,7 +36,7 @@ export const AppContent = () => {
           </select>
         </div>
       </Header>
-      <Main>
+      <Section>
         <ArcaneCharactersAdapter
           language={language}
           characters={arcaneCharacters}
@@ -49,7 +49,7 @@ export const AppContent = () => {
           isLoading={tlouIsLoading}
           handleLoadCharacters={handleLoadTlouCharacters}
         />
-      </Main>
+      </Section>
     </Container>
   );
 };

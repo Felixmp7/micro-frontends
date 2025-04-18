@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.main`
   min-height: 100vh;
   color: #fff;
   font-family: 'Segoe UI', Arial, sans-serif;
 `;
 
-export const Main = styled.main`
+export const Section = styled.section`
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
