@@ -23,9 +23,9 @@ export const CharactersList = ({
       <Container>
         {characters.map(({ name, description, image }) => (
           <Item key={name}>
-            <img src={image} alt={name} />
+            <img src={image} alt={`${name}, Arcane Character`} />
             <span aria-label='name'>{name}</span>
-            <p>{description[language]}</p>
+            <p aria-label='description'>{description[language]}</p>
           </Item>
         ))}
       </Container>
@@ -35,7 +35,7 @@ export const CharactersList = ({
   return (
     <>
       <Button onClick={onClick}>{buttonText}</Button>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <p aria-live="polite">Loading...</p>}
     </>
   )
 }
