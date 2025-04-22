@@ -6,5 +6,8 @@
     "host-app",
     "arcane-mf",
     "tlou-mf"
-  ]
+  ],
+  "scripts": {
+    "start:all": "pnpm --filter host-app run dev & pnpm --filter arcane-mf run build:watch & pnpm --filter tlou-mf run build:watch"
+  }
 }
