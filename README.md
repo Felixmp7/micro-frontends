@@ -33,32 +33,24 @@ The folder structure follows the classic by-type approach (`components/`, `hooks
 Run each app's development server:
 
 ```
-pnpm --filter host-app dev
-pnpm --filter arcane-mf dev
-pnpm --filter tlou-mf dev
-```
-
-> **Note:** To run all apps together in order to test the microfrontends integration, you need to run:
-
-- In host-app:
-```
-pnpm run dev
-```
-
-- In arcane-mf:
-```
-pnpm run build:watch
-```
-
-- In tlou-mf:
-```
-pnpm run build:watch
+pnpm run start:all
 ```
 
 ## Testing
 
 Each app includes Vitest:
-
 ```
 pnpm --filter <app> test
+```
+
+## Docker
+
+### Build Docker image:
+```sh
+docker build -t mf-characters-image .
+```
+
+### Run Docker container:
+```sh
+docker run --name micro-frontend-characters-app -dp 3000:3000 -dp 3001:3001 -dp 3002:3002 mf-characters-image
 ```
