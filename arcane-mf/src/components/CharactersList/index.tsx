@@ -1,5 +1,6 @@
 import { SeriesCharacter } from 'shared-entities';
-import { Button, Container, Item } from './Styled';
+
+import { Button, Container, Item } from './CharactersList.styled';
 
 interface Props {
   characters: SeriesCharacter[];
@@ -19,12 +20,12 @@ export const CharactersList = ({
 
   if (characters.length && !isLoading) {
     return (
-      <Container className="arcane-characters__container">
+      <Container>
         {characters.map(({ name, description, image }) => (
-          <Item className="arcane-characters__item" key={name}>
-            <img src={image} alt={name} />
+          <Item key={name}>
+            <img src={image} alt={`${name}, Arcane Character`} />
             <span aria-label='name'>{name}</span>
-            <p>{description[language]}</p>
+            <p aria-label='description'>{description[language]}</p>
           </Item>
         ))}
       </Container>
@@ -33,8 +34,8 @@ export const CharactersList = ({
 
   return (
     <>
-      <Button onClick={onClick} className='arcane-characters__button'>{buttonText}</Button>
-      {isLoading && <p>Loading...</p>}
+      <Button onClick={onClick}>{buttonText}</Button>
+      {isLoading && <p aria-live="polite">Loading...</p>}
     </>
   )
 }

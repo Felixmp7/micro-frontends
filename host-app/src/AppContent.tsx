@@ -1,11 +1,12 @@
 import { ArcaneCharactersAdapter } from 'adapters/ArcaneCharactersAdapter';
 import { TlouCharactersAdapter } from 'adapters/TlouCharactersAdapter';
-import { Container, Header } from 'App.styles';
+import { Container, Header, Section } from 'App.styles';
 import { useCharacters } from 'hooks/useCharacters';
 import { useLanguage } from 'hooks/useLanguage';
 import { texts } from 'i18n/texts';
 import ARCANE_JSON from 'mocks/ARCANE.json';
 import TLOU_JSON from 'mocks/TLOU.json';
+import { getCharacters } from 'services/characters.service';
 
 export const AppContent = () => {
   const { language, setLanguage } = useLanguage();
@@ -15,27 +16,27 @@ export const AppContent = () => {
     characters: arcaneCharacters,
     isLoading: arcaneIsLoading,
     handleLoadCharacters: handleLoadArcaneCharacters
-  } = useCharacters(ARCANE_JSON)
+  } = useCharacters(() => getCharacters(ARCANE_JSON))
 
   const {
     characters: tlouCharacters,
     isLoading: tlouIsLoading,
     handleLoadCharacters: handleLoadTlouCharacters
-  } = useCharacters(TLOU_JSON)
+  } = useCharacters(() => getCharacters(TLOU_JSON))
 
   return (
-    <Container className="host-app__container">
-      <Header className="host-app__header">
+    <Container>
+      <Header>
         <h1>{t.title}</h1>
         <div>
           <label>{t.language}: </label>
-          <select value={language} onChange={e => setLanguage(e.target.value as 'en' | 'es')}>
+          <select value={language} onChange={({ target }) => setLanguage(target.value as 'en' | 'es')}>
             <option value="en">EN</option>
             <option value="es">ES</option>
           </select>
         </div>
       </Header>
-      <main className="host-app__main">
+      <Section>
         <ArcaneCharactersAdapter
           language={language}
           characters={arcaneCharacters}
@@ -48,7 +49,7 @@ export const AppContent = () => {
           isLoading={tlouIsLoading}
           handleLoadCharacters={handleLoadTlouCharacters}
         />
-      </main>
+      </Section>
     </Container>
   );
 };
