@@ -42,6 +42,7 @@ Each app includes Vitest:
 ```
 pnpm --filter <app> test
 ```
+> **Note:** Where `<app>` can be `host-app`, `arcane-mf`, or `tlou-mf`.
 
 ## Docker
 
