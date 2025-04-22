@@ -1,29 +1,26 @@
-# Dockerfile para desarrollo de monorepo microfrontends
+# Use official Node.js LTS image
 FROM node:20-alpine
 
-# Instala pnpm globalmente
-RUN npm install -g pnpm
-
-# Crea directorio de trabajo
+# Set working directory
 WORKDIR /app
 
-# Copia los archivos de configuración primero para aprovechar el cache
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# Copy package files
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY host-app/package.json ./host-app/
+COPY arcane-mf/package.json ./arcane-mf/
+COPY tlou-mf/package.json ./tlou-mf/
 
-# Copia los package.json de los paquetes principales y shared-entities
-COPY host-app/package.json ./host-app/package.json
-COPY arcane-mf/package.json ./arcane-mf/package.json
-COPY tlou-mf/package.json ./tlou-mf/package.json
-COPY shared-entities/package.json ./shared-entities/package.json
-
-# Instala dependencias de todos los workspaces
+# Install dependencies
 RUN pnpm install
 
-# Copia el resto del código fuente
+# Copy the rest of the monorepo
 COPY . .
 
-# Expone los puertos típicos para desarrollo
+# Expose required ports
 EXPOSE 3000 3001 3002
 
-# Comando por defecto: usar docker-compose para orquestar varios procesos
-CMD ["sh", "-c", "echo 'Usa docker-compose para desarrollo local'"]
+# Start all apps in parallel
+CMD ["pnpm", "start:all"]
